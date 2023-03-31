@@ -14,7 +14,7 @@ class CreateAccountScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Create new Account"),
+        title: const Text("สร้างบัญชีผู้ใช้"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(28.0),
@@ -22,7 +22,7 @@ class CreateAccountScreen extends StatelessWidget {
           children: [
             TextField(
               controller: _emailController,
-              decoration: const InputDecoration(hintText: "Email"),
+              decoration: const InputDecoration(hintText: "อีเมล"),
             ),
             const SizedBox(
               height: 10,
@@ -30,7 +30,7 @@ class CreateAccountScreen extends StatelessWidget {
             TextField(
               controller: _passwordController,
               obscureText: true,
-              decoration: const InputDecoration(hintText: "Password"),
+              decoration: const InputDecoration(hintText: "รหัสผ่าน"),
             ),
             const SizedBox(
               height: 20,
@@ -41,12 +41,12 @@ class CreateAccountScreen extends StatelessWidget {
                       _emailController.text, _passwordController.text);
                   if (res) {
                     ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: Text("Account Created")));
+                        SnackBar(content: Text("สร้างเสร็จสิ้น")));
                     Navigator.pushReplacement(context,
                         MaterialPageRoute(builder: (context) => LoginScreen()));
                   }
                 },
-                child: const Text("Create Account"))
+                child: const Text("สร้างบัญชี"))
           ],
         ),
       ),

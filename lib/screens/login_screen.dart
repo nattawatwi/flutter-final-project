@@ -30,7 +30,7 @@ class LoginScreen extends StatelessWidget {
             ),
             TextField(
               controller: _emailController,
-              decoration: const InputDecoration(hintText: "Email"),
+              decoration: const InputDecoration(hintText: "อีเมล"),
             ),
             const SizedBox(
               height: 10,
@@ -38,7 +38,7 @@ class LoginScreen extends StatelessWidget {
             TextField(
               controller: _passwordController,
               obscureText: true,
-              decoration: const InputDecoration(hintText: "Password"),
+              decoration: const InputDecoration(hintText: "รหัสผ่าน"),
             ),
             const SizedBox(
               height: 20,
@@ -58,7 +58,7 @@ class LoginScreen extends StatelessWidget {
                                 MyHomePage(title: 'หน้าหลัก')));
                   }
                 },
-                child: const Text("Login")),
+                child: const Text("เข้าสู่ระบบ")),
             const SizedBox(
               height: 20,
             ),
@@ -67,7 +67,7 @@ class LoginScreen extends StatelessWidget {
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => CreateAccountScreen()));
               },
-              child: const Text("No Account? Create New >>"),
+              child: const Text("ไม่มีบัญชี? สร้างบัญชี >>"),
             )
           ],
         ),

@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
       title: 'Notes',
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
+        scaffoldBackgroundColor: Colors.white70,
       ),
       home: LoginScreen(),
     );
@@ -62,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: ListView(
           children: [
             DrawerHeader(
-              decoration: const BoxDecoration(color: Colors.white),
+              decoration: const BoxDecoration(color: Colors.blueGrey),
               child: Row(
                 children: [
                   Icon(Icons.account_circle),
