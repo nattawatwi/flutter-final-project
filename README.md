@@ -1,5 +1,11 @@
 # flutter_project
 
+
+Final-project 
+  - บันทึกข้อมูลด้วย Firebase
+  ////////////////////
+  - run pub get
+
 A new Flutter project.
 
 ## Getting Started
