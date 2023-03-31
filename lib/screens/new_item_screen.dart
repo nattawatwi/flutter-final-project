@@ -36,13 +36,19 @@ class _NewItemScreenState extends State<NewItemScreen> {
             const SizedBox(
               height: 20,
             ),
-            ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.greenAccent,
-                  onPrimary: Colors.white,
+            Row(
+              children: [
+                Expanded(
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.greenAccent,
+                        onPrimary: Colors.white,
+                      ),
+                      onPressed: _addItem,
+                      child: const Text("บันทึก")),
                 ),
-                onPressed: _addItem,
-                child: const Text("บันทึก")),
+              ],
+            ),
           ],
         ),
       ),
