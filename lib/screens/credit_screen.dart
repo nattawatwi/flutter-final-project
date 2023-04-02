@@ -11,7 +11,7 @@ class _CreditScreenState extends State<CreditScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("เครดิตผู้ทำ"),
+        title: const Text("เกี่ยวกับ"),
       ),
       body: Center(
         child: Column(
@@ -24,18 +24,30 @@ class _CreditScreenState extends State<CreditScreen> {
             ),
             const SizedBox(height: 16),
             const Text(
-              "Nattawat Wilai",
+              "บอม",
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),
             const Text(
-              "Large Language Model\nTrained by OpenAI",
+              "นายณัฐวัตร วิลัย",
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 16),
+            ),
+            const SizedBox(height: 8),
+            const Text(
+              "633410013-6",
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 16),
+            ),
+            const SizedBox(height: 8),
+            const Text(
+              "วิทยาการคอมพิวเตอร์และสารสนเทศ",
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 16),
             ),
             const SizedBox(height: 32),
             const Text(
-              "ติดตาม ChatGPT ได้ที่",
+              "ติดตามผลงานได้ที่",
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 16),
             ),

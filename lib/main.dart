@@ -66,21 +66,31 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             DrawerHeader(
               decoration: const BoxDecoration(color: Colors.brown),
-              child: Row(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Icon(Icons.account_circle),
-                  SizedBox(width: 8.0),
+                  SizedBox(height: 16.0),
+                  Icon(
+                    Icons.account_circle,
+                    size: 50.0,
+                  ),
+                  SizedBox(height: 8.0),
                   Text("ยินดีต้อนรับ $displayEmail")
                 ],
               ),
             ),
             ListTile(
-              leading: Icon(Icons.info, color: Colors.blueAccent),
-              title: const Text("Credit"),
+              leading: Icon(Icons.info, color: Colors.black),
+              title: const Text("เกี่ยวกับ"),
               onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => CreditScreen()));
               },
+            ),
+            ListTile(
+              leading: Icon(Icons.settings_applications, color: Colors.black),
+              title: const Text("ตั่งค่า"),
+              onTap: () {},
             ),
             ListTile(
               leading: Icon(Icons.logout, color: Colors.pinkAccent),
@@ -105,7 +115,7 @@ class _MyHomePageState extends State<MyHomePage> {
             itemCount: dataDocuments.length,
             itemBuilder: (context, index) {
               return ListTile(
-                leading: Icon(Icons.favorite, color: Colors.pinkAccent),
+                leading: Text("${index + 1}."),
                 title: Text(dataDocuments[index]["name"].toString()),
                 subtitle: Text(dataDocuments[index]["desc"].toString()),
                 trailing: IconButton(

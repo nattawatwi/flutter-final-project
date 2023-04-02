@@ -64,24 +64,8 @@ class _NewItemScreenState extends State<NewItemScreen> {
       "name": _itemName.text,
       "desc": _itemDesc.text,
     });
-
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: const Text("เพิ่มข้อมูลเรียบร้อยแล้ว"),
-        content: const Text("ข้อมูลของท่านได้ถูกเพิ่มแล้ว"),
-        actions: [
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              primary: Colors.lightGreenAccent,
-              onPrimary: Colors.white,
-            ),
-            onPressed: () => Navigator.of(context).pop(),
-            child: const Text("ตกลง"),
-          ),
-        ],
-      ),
-    );
+    ScaffoldMessenger.of(context)
+        .showSnackBar(SnackBar(content: Text("บันทึกเสร็จสิ้น")));
 
     _itemName.clear();
     _itemDesc.clear();

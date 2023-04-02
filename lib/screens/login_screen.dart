@@ -49,8 +49,7 @@ class LoginScreen extends StatelessWidget {
                       _emailController.text, _passwordController.text);
                   if (res) {
                     ScaffoldMessenger.of(context)
-                        .showSnackBar(SnackBar(content: Text("Logged in")));
-
+                        .showSnackBar(SnackBar(content: Text("เข้าสู่ระบบ")));
                     Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(

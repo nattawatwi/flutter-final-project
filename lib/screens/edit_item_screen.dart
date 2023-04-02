@@ -85,6 +85,8 @@ class _EditItemScreenState extends State<EditItemScreen> {
         'desc': newDesc,
       }).then((value) {
         Navigator.pop(context);
+        ScaffoldMessenger.of(context)
+            .showSnackBar(SnackBar(content: Text("แก้ไขเสร็จสิ้น")));
       }).catchError((error) {
         showDialog(
           context: context,
@@ -92,7 +94,7 @@ class _EditItemScreenState extends State<EditItemScreen> {
             title: const Text('เกิดข้อผิดพลาด'),
             content: Text(error.toString()),
             actions: [
-              TextButton(
+              ElevatedButton(
                 onPressed: () => Navigator.of(context).pop(),
                 child: const Text('ตกลง'),
               ),
@@ -107,8 +109,8 @@ class _EditItemScreenState extends State<EditItemScreen> {
           title: const Text('เกิดข้อผิดพลาด'),
           content: const Text('กรุณากรอกข้อมูลให้ครบถ้วน'),
           actions: [
-            TextButton(
-              style: TextButton.styleFrom(
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
                 primary: Colors.lightGreenAccent,
               ),
               onPressed: () => Navigator.of(context).pop(),
@@ -123,40 +125,8 @@ class _EditItemScreenState extends State<EditItemScreen> {
   void _deleteItem() {
     _itemService.deleteItem(widget.documentId).then((value) {
       Navigator.pop(context);
-      showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-          title: const Text('ลบเรียบร้อยแล้ว'),
-          actions: [
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: Colors.lightGreenAccent,
-                onPrimary: Colors.white,
-              ),
-              onPressed: () => Navigator.of(context).pop(),
-              child: const Text('ตกลง'),
-            ),
-          ],
-        ),
-      );
-    }).catchError((error) {
-      showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-          title: const Text('เกิดข้อผิดพลาด'),
-          content: Text(error.toString()),
-          actions: [
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: Colors.lightGreenAccent,
-                onPrimary: Colors.white,
-              ),
-              onPressed: () => Navigator.of(context).pop(),
-              child: const Text('ตกลง'),
-            ),
-          ],
-        ),
-      );
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text("ลบเสร็จสิ้น")));
     });
   }
 }
