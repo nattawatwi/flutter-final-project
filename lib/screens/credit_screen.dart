@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -56,13 +58,17 @@ class _CreditScreenState extends State<CreditScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Link("https://github.com/nattawatwi");
+                  },
                   icon: Icon(Icons.hub),
                   tooltip: "Github",
                 ),
                 const SizedBox(width: 16),
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Link("https://www.facebook.com/Nattawat.CJ/");
+                  },
                   icon: Icon(Icons.facebook),
                   tooltip: "Facebook",
                 ),

@@ -30,7 +30,10 @@ class LoginScreen extends StatelessWidget {
             ),
             TextField(
               controller: _emailController,
-              decoration: const InputDecoration(hintText: "อีเมล"),
+              decoration: InputDecoration(
+                hintText: "อีเมล",
+                prefixIcon: Icon(Icons.email),
+              ),
             ),
             const SizedBox(
               height: 10,
@@ -38,7 +41,10 @@ class LoginScreen extends StatelessWidget {
             TextField(
               controller: _passwordController,
               obscureText: true,
-              decoration: const InputDecoration(hintText: "รหัสผ่าน"),
+              decoration: InputDecoration(
+                hintText: "รหัสผ่าน",
+                prefixIcon: Icon(Icons.lock),
+              ),
             ),
             const SizedBox(
               height: 20,

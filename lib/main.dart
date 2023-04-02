@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_project/screens/edit_item_screen.dart';
 import 'package:flutter_project/screens/login_screen.dart';
 import 'package:flutter_project/screens/new_item_screen.dart';
+import 'package:flutter_project/screens/setting_screen.dart';
 import 'package:flutter_project/services/auth_service.dart';
 
 import 'package:flutter_project/screens/credit_screen.dart';
@@ -88,12 +89,15 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             ListTile(
-              leading: Icon(Icons.settings_applications, color: Colors.black),
+              leading: Icon(Icons.settings, color: Colors.black),
               title: const Text("ตั่งค่า"),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SettingScreen()));
+              },
             ),
             ListTile(
-              leading: Icon(Icons.logout, color: Colors.pinkAccent),
+              leading: Icon(Icons.logout, color: Colors.black),
               title: const Text("ลงชื่อออก"),
               onTap: () {
                 _service.logout(currentUser);
@@ -134,7 +138,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _createNewItem,
-        tooltip: 'New Item',
+        tooltip: 'เพิ่มโน๊ตของคุณ',
         child: const Icon(Icons.add),
       ),
       // This trailing comma makes auto-formatting nicer for build methods.
