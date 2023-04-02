@@ -39,13 +39,15 @@ class _NewItemScreenState extends State<NewItemScreen> {
             Row(
               children: [
                 Expanded(
-                  child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.greenAccent,
-                        onPrimary: Colors.white,
-                      ),
-                      onPressed: _addItem,
-                      child: const Text("บันทึก")),
+                  child: ElevatedButton.icon(
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.lightGreenAccent,
+                      onPrimary: Colors.white,
+                    ),
+                    onPressed: _addItem,
+                    icon: Icon(Icons.save), // เพิ่มไอคอน save
+                    label: const Text("บันทึก"),
+                  ),
                 ),
               ],
             ),
@@ -70,6 +72,10 @@ class _NewItemScreenState extends State<NewItemScreen> {
         content: const Text("ข้อมูลของท่านได้ถูกเพิ่มแล้ว"),
         actions: [
           ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              primary: Colors.lightGreenAccent,
+              onPrimary: Colors.white,
+            ),
             onPressed: () => Navigator.of(context).pop(),
             child: const Text("ตกลง"),
           ),

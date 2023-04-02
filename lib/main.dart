@@ -7,6 +7,8 @@ import 'package:flutter_project/screens/login_screen.dart';
 import 'package:flutter_project/screens/new_item_screen.dart';
 import 'package:flutter_project/services/auth_service.dart';
 
+import 'package:flutter_project/screens/credit_screen.dart';
+
 import 'firebase_options.dart';
 
 void main() async {
@@ -29,7 +31,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Notes',
       theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
+        primarySwatch: Colors.brown,
         scaffoldBackgroundColor: Colors.white70,
       ),
       home: LoginScreen(),
@@ -63,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: ListView(
           children: [
             DrawerHeader(
-              decoration: const BoxDecoration(color: Colors.blueGrey),
+              decoration: const BoxDecoration(color: Colors.brown),
               child: Row(
                 children: [
                   Icon(Icons.account_circle),
@@ -71,6 +73,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   Text("ยินดีต้อนรับ $displayEmail")
                 ],
               ),
+            ),
+            ListTile(
+              leading: Icon(Icons.info, color: Colors.blueAccent),
+              title: const Text("Credit"),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => CreditScreen()));
+              },
             ),
             ListTile(
               leading: Icon(Icons.logout, color: Colors.pinkAccent),
@@ -98,8 +108,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 leading: Icon(Icons.favorite, color: Colors.pinkAccent),
                 title: Text(dataDocuments[index]["name"].toString()),
                 subtitle: Text(dataDocuments[index]["desc"].toString()),
-                onTap: () => _editItemScreen(dataDocuments[index].id,
-                    dataDocuments[index]["name"], dataDocuments[index]["desc"]),
+                trailing: IconButton(
+                  icon: Icon(Icons.search),
+                  onPressed: () {
+                    _editItemScreen(
+                        dataDocuments[index].id,
+                        dataDocuments[index]["name"],
+                        dataDocuments[index]["desc"]);
+                  },
+                ),
               );
             },
           );

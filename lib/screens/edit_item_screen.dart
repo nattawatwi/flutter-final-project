@@ -45,23 +45,27 @@ class _EditItemScreenState extends State<EditItemScreen> {
             Row(
               children: [
                 Expanded(
-                  child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.redAccent,
-                        onPrimary: Colors.white,
-                      ),
-                      onPressed: _deleteItem,
-                      child: const Text("ลบ")),
+                  child: ElevatedButton.icon(
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.redAccent,
+                      onPrimary: Colors.white,
+                    ),
+                    onPressed: _deleteItem,
+                    icon: Icon(Icons.delete), // เพิ่มไอคอน delete
+                    label: const Text("ลบ"),
+                  ),
                 ),
                 const SizedBox(width: 10),
                 Expanded(
-                  child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.greenAccent,
-                        onPrimary: Colors.white,
-                      ),
-                      onPressed: _editItem,
-                      child: const Text("แก้ไข")),
+                  child: ElevatedButton.icon(
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.lightGreenAccent,
+                      onPrimary: Colors.white,
+                    ),
+                    onPressed: _editItem,
+                    icon: Icon(Icons.edit), // เพิ่มไอคอน edit
+                    label: const Text("แก้ไข"),
+                  ),
                 ),
               ],
             ),
@@ -104,6 +108,9 @@ class _EditItemScreenState extends State<EditItemScreen> {
           content: const Text('กรุณากรอกข้อมูลให้ครบถ้วน'),
           actions: [
             TextButton(
+              style: TextButton.styleFrom(
+                primary: Colors.lightGreenAccent,
+              ),
               onPressed: () => Navigator.of(context).pop(),
               child: const Text('ตกลง'),
             ),
@@ -122,6 +129,10 @@ class _EditItemScreenState extends State<EditItemScreen> {
           title: const Text('ลบเรียบร้อยแล้ว'),
           actions: [
             ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Colors.lightGreenAccent,
+                onPrimary: Colors.white,
+              ),
               onPressed: () => Navigator.of(context).pop(),
               child: const Text('ตกลง'),
             ),
@@ -136,6 +147,10 @@ class _EditItemScreenState extends State<EditItemScreen> {
           content: Text(error.toString()),
           actions: [
             ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Colors.lightGreenAccent,
+                onPrimary: Colors.white,
+              ),
               onPressed: () => Navigator.of(context).pop(),
               child: const Text('ตกลง'),
             ),
