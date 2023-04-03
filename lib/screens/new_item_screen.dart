@@ -64,6 +64,7 @@ class _NewItemScreenState extends State<NewItemScreen> {
       "name": _itemName.text,
       "desc": _itemDesc.text,
     });
+    Navigator.pop(context);
     ScaffoldMessenger.of(context)
         .showSnackBar(SnackBar(content: Text("บันทึกเสร็จสิ้น")));
 

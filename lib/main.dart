@@ -141,17 +141,16 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'เพิ่มโน๊ตของคุณ',
         child: const Icon(Icons.add),
       ),
-      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 
-  //การสร้าง method _createNewItem() สำหรับการเพิ่มข้อมูลใหม่ในหน้า MyHomePage
+  // method _createNewItem() สำหรับการเพิ่มข้อมูลใหม่ในหน้า MyHomePage
   void _createNewItem() {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => NewItemScreen()));
   }
 
-  //สร้าง method _editItemScreen() สำหรับการแก้ไขข้อมูลที่เลือกแสดงในหน้าแอปพลิเคชัน
+  // method _editItemScreen() สำหรับการแก้ไขข้อมูลที่เลือกแสดงในหน้าแอปพลิเคชัน
   _editItemScreen(String documentid, String itemName, String itemDesc) {
     Navigator.push(
         context,
